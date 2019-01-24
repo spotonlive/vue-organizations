@@ -9,7 +9,7 @@ describe('hot reloading', () => {
     Object.keys(organizations).forEach(org => {
       Vue.organization(org, organizations[org])
     })
-    Vue.config.org = 'en'
+    Vue.config.org = 'freemium'
 
     el = document.createElement('div')
     document.body.appendChild(el)
@@ -28,7 +28,7 @@ describe('hot reloading', () => {
   it('should be reload', done => {
     const options = {
       el,
-      data () { return { org: 'en' } }
+      data () { return { org: 'freemium' } }
     }
     options.render = function (h) {
       return h('p', {}, [this.$org('message.hello', this.org)])

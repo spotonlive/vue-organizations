@@ -5,7 +5,7 @@ describe('custom formatter', () => {
     Object.keys(organizations).forEach(org => {
       Vue.organization(org, organizations[org])
     })
-    Vue.config.org = 'en'
+    Vue.config.org = 'freemium'
     Vue.nextTick(done)
   })
 
