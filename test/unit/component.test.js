@@ -6,7 +6,7 @@ describe('component organizations', () => {
     Object.keys(organizations).forEach(org => {
       Vue.organization(org, organizations[org])
     })
-    Vue.config.org = 'en'
+    Vue.config.org = 'freemium'
 
     const el = document.createElement('div')
     const compOptions = {
@@ -65,7 +65,7 @@ describe('component organizations', () => {
   describe('$org', () => {
     it('should be work', () => {
       const comp1 = vm.$children[0] // component1
-      assert.equal(comp1.$org, 'en')
+      assert.equal(comp1.$org, 'freemium')
     })
   })
 })

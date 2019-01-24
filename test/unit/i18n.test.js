@@ -5,7 +5,7 @@ describe('i18n', () => {
     Object.keys(organizations).forEach(org => {
       Vue.organization(org, organizations[org])
     })
-    Vue.config.org = 'en'
+    Vue.config.org = 'freemium'
     Vue.nextTick(done)
   })
 
@@ -273,7 +273,7 @@ describe('i18n', () => {
       const options = {
         el,
         data () {
-          return { org: 'en' }
+          return { org: 'freemium' }
         }
       }
       options.render = function (h) {
@@ -354,9 +354,9 @@ describe('i18n', () => {
           })
         })
 
-        describe('en', () => {
+        describe('freemium', () => {
           it('should translate with english', done => {
-            Vue.config.org = 'en'
+            Vue.config.org = 'freemium'
             Vue.nextTick(() => {
               assert.equal(vm.$org('message.hello'), organizations.en.message.hello)
               done()
