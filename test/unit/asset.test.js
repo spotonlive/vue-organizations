@@ -2,7 +2,7 @@ describe('asset', () => {
   let organization
 
   beforeEach(() => {
-    Vue.organization('en', null) // reset
+    Vue.organization('freemium', null) // reset
   })
 
   describe('register sync', () => {
@@ -12,8 +12,8 @@ describe('asset', () => {
           foo: 'foo'
         }
       }
-      Vue.organization('en', organization)
-      assert.equal(Vue.organization('en'), organization)
+      Vue.organization('freemium', organization)
+      assert.equal(Vue.organization('freemium'), organization)
     })
   })
 
@@ -23,14 +23,14 @@ describe('asset', () => {
       describe('resolve', () => {
         it('should be registered', done => {
           organization = { message: { bar: 'bar' } }
-          Vue.organization('en', () => {
+          Vue.organization('freemium', () => {
             return (resolve, reject) => {
               setTimeout(() => {
                 resolve(organization)
               }, 0)
             }
           }, () => {
-            assert.equal(Vue.organization('en'), organization)
+            assert.equal(Vue.organization('freemium'), organization)
             done()
           })
         })
@@ -38,14 +38,14 @@ describe('asset', () => {
 
       describe('reject', () => {
         it('should not be registered', done => {
-          Vue.organization('en', () => {
+          Vue.organization('freemium', () => {
             return (resolve, reject) => {
               setTimeout(() => {
                 reject()
               }, 0)
             }
           }, () => {
-            assert.ok(!Vue.organization('en'))
+            assert.ok(!Vue.organization('freemium'))
             done()
           })
         })
@@ -56,14 +56,14 @@ describe('asset', () => {
       describe('resolve', () => {
         it('should be registered', done => {
           organization = { mesasge: { buz: 'buz' } }
-          Vue.organization('en', () => {
+          Vue.organization('freemium', () => {
             return new Promise((resolve, reject) => {
               setTimeout(() => {
                 resolve(organization)
               }, 0)
             })
           }, () => {
-            assert.equal(Vue.organization('en'), organization)
+            assert.equal(Vue.organization('freemium'), organization)
             done()
           })
         })
@@ -71,14 +71,14 @@ describe('asset', () => {
 
       describe('reject', () => {
         it('should not be registered', done => {
-          Vue.organization('en', () => {
+          Vue.organization('freemium', () => {
             return new Promise((resolve, reject) => {
               setTimeout(() => {
                 reject()
               }, 0)
             })
           }, () => {
-            assert.ok(!Vue.organization('en'))
+            assert.ok(!Vue.organization('freemium'))
             done()
           })
         })

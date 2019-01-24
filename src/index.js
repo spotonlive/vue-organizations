@@ -27,7 +27,7 @@ function plugin (Vue, opts = {}) {
     return
   }
 
-  const org = 'en'
+  const org = 'freemium'
   setupOrgVM(Vue, org)
 
   Asset(Vue, orgVM)

@@ -902,7 +902,7 @@ function plugin (Vue, opts) {
     return
   }
 
-  var org = 'en';
+  var org = 'freemium';
   setupOrgVM(Vue, org);
 
   Asset(Vue, orgVM);

@@ -2,7 +2,7 @@ describe('missing', () => {
   let org
   beforeEach(() => {
     org = Vue.config.org
-    Vue.config.org = 'en'
+    Vue.config.org = 'freemium'
   })
 
   afterEach(done => {
@@ -14,7 +14,7 @@ describe('missing', () => {
   describe('global', () => {
     it('should be handled translate missing', done => {
       Vue.config.missingHandler = (org, key, vm) => {
-        assert.equal('en', org)
+        assert.equal('freemium', org)
         assert.equal('foo.bar.buz', key)
         assert(vm === null)
         done()
@@ -28,7 +28,7 @@ describe('missing', () => {
     it('should be handled translate missing', done => {
       const vm = new Vue()
       Vue.config.missingHandler = (org, key, instance) => {
-        assert.equal('en', org)
+        assert.equal('freemium', org)
         assert.equal('foo.bar.buz', key)
         assert(vm === instance)
         done()
